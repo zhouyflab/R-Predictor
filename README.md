@@ -13,3 +13,4 @@
 This pipeline is designed to automatically annotate 15 distinct domain topologies of disease resistance genes across the entire plant genome.
 
 R-Predictor, designed for the de novo annotation of various R genes integrate four modules for data pre-processing and the identification of different types of proteins. Each module incorporates customized filtering scripts and the best-performing methods identified through benchmarking.
+![示例图片](images/photo.png)
