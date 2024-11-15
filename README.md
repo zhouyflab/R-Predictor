@@ -23,7 +23,7 @@ The Docker version of the R-Predictor will be released shortly!!!
 
 ### Manual installation
 Manually installing R-Predictor can be cumbersome, but fortunately, these tools it depends on are easy to work with.
-- [PfamScan](https://ftp.ebi.ac.uk/pub/databases/Pfam/releases/Pfam36.0/)
+- [Pfam36.0](https://ftp.ebi.ac.uk/pub/databases/Pfam/releases/Pfam36.0/)
 ~~~
 conda create -n pfam_scan
 source activate pfam_scan
@@ -37,5 +37,8 @@ conda install -c predector signalp6
 signalp6-register ./signalp-6.0h.fast.tar.gz
 ~~~
 - [TMHMM-2.0](https://services.healthtech.dtu.dk/cgi-bin/sw_request?software=tmhmm&version=2.0c&packageversion=2.0c&platform=Linux)
-
+The installation details are as follows:
+1.Click the hyperlink to download the installation package.
+2.Modify the first line of the ~tmhmm~ in the ~bin~ folder to use your own perl path, which can be found by running ~which perl~. On line 33, change ~$opt_basedir="./tmhmm-2.0c"~
+3.Modify the first line of the ~tmhmmformat.pl~file to use your own perl path.
 
