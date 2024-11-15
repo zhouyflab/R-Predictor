@@ -43,4 +43,16 @@ The installation details are as follows:
 2.Modify the first line of the `tmhmm` in the bin folder to use your own perl path, which can be found by running `which perl`. On line 33, change $opt_basedir="./tmhmm-2.0c".
 3.Modify the first line of the `tmhmmformat.pl` to use your own perl path.
 ~~~
+- [ESM-LRR](https://github.com/zhouyflab/R-Predictor/)
+~~~
+conda create -n ESM-LRR
+~~~
+- [ProSite](https://ftp.expasy.org/databases/prosite/ps_scan/README)
+~~~
+source activate pfam_scan
+conda install -c bioconda pftools
+~~~
+- [Paircoil2](https://cb.csail.mit.edu/paircoil2/)
+~~~
 
+~~~
