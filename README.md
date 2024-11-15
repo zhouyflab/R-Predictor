@@ -17,5 +17,11 @@ R-Predictor, designed for the de novo annotation of various R genes integrate fo
 ![示例图片](images/pipeline.png)
 ## Installation
 There are several ways to install R-Predictor. You just need to find the best that works for your system.
+
 ### Quick installation using Docker
+The Docker version of the R-Predictor will be released shortly!!!
+
 ### Manual installation
+Manually installing R-Predictor can be cumbersome, but fortunately, the tools it depends on are easy to work with.
+- [PfamScan]
+'conda create -n pfam_scan'
