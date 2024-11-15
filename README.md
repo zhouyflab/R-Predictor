@@ -40,7 +40,7 @@ signalp6-register ./signalp-6.0h.fast.tar.gz
 ~~~
 The installation details are as follows:
 1.Click the hyperlink to download the installation package.
-2.Modify the first line of the `tmhmm` in the bin folder to use your own perl path, which can be found by running `which perl`. On line 33, change `$opt_basedir="./tmhmm-2.0c"`.
+2.Modify the first line of the `tmhmm` in the bin folder to use your own perl path, which can be found by running `which perl`. On line 33, change $opt_basedir="./tmhmm-2.0c".
 3.Modify the first line of the `tmhmmformat.pl` to use your own perl path.
 ~~~
 
