@@ -54,5 +54,8 @@ conda install -c bioconda pftools
 ~~~
 - [Paircoil2](https://cb.csail.mit.edu/paircoil2/)
 ~~~
-
+Place the configuration file .paircoil2 in your home directory and the 
+executable and data files (*.tb) in the directory you will run Paircoil2 in.
 ~~~
+**If the above tools cannot be installed via conda or downloaded from the official website, please go to the [tools]() folder.**
+
