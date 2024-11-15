@@ -37,8 +37,10 @@ conda install -c predector signalp6
 signalp6-register ./signalp-6.0h.fast.tar.gz
 ~~~
 - [TMHMM-2.0](https://services.healthtech.dtu.dk/cgi-bin/sw_request?software=tmhmm&version=2.0c&packageversion=2.0c&platform=Linux)
+~~~
 The installation details are as follows:
 1.Click the hyperlink to download the installation package.
-2.Modify the first line of the ~tmhmm~ in the ~bin~ folder to use your own perl path, which can be found by running ~which perl~. On line 33, change ~$opt_basedir="./tmhmm-2.0c"~
-3.Modify the first line of the ~tmhmmformat.pl~file to use your own perl path.
+2.Modify the first line of the `tmhmm` in the bin folder to use your own perl path, which can be found by running `which perl`. On line 33, change `$opt_basedir="./tmhmm-2.0c"`.
+3.Modify the first line of the `tmhmmformat.pl` to use your own perl path.
+~~~
 
