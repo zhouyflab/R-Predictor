@@ -54,8 +54,46 @@ conda install -c bioconda pftools
 ~~~
 - [Paircoil2](https://cb.csail.mit.edu/paircoil2/)
 ~~~
-Place the configuration file .paircoil2 in your home directory and the 
+Place the configuration file .paircoil2 in your home directory and the
 executable and data files (*.tb) in the directory you will run Paircoil2 in.
 ~~~
-**If the above tools cannot be installed via conda or downloaded from the official website, please go to the [tools]() folder.**
+**If the above tools cannot be installed via conda or downloaded from the official website, please go to the [tools](tools/) folder.**
+## Input
+R-Predictor supports single or multiple protein sequences, which should be in FASTA format.
+~~~
+>sp|Q9XGM3|RPS4_ARATH
+METSSISTVEDKPPQHQVFINFRGADLRRRFVSHLVTALKLNNINVFIDDYEDRGQPLDV
+LLKRIEESKIVLAIFSGNYTESVWCVRELEKIKDCTDEGTLVAIPIFYKLEPSTVRDLKG
+KFGDRFRSMAKGDERKKKWKEAFNLIPNIMGIIIDKKSVESEKVNEIVKAVKTALTGIPP
+EGSHNAVVGALGNSNAGTSSGDKKHETFGNEQRLKDLEEKLDRDKYKGTRIIGVVGMPGI
+GKTTLLKELYKTWQGKFSRHALIDQIRVKSKHLELDRLPQMLLGELSKLNHPHVDNLKDP
+YSQLHERKVLVVLDDVSKREQIDALREILDWIKEGKEGSRVVIATSDMSLTNGLVDDTYM
+~~~
+## Output
+R-Predictor will return 15 protein sequence files, each corresponding to a plant disease-resistance protein with a different domain topology.
+~~~
+/outcome
+  xx_lrr_rlk.fasta
+  xx_lysm_rlk.fasta
+  xx_s_tm_rlk.fasta
+  xx_pk_fasta
+  xx_lrr_rlpfasta
+  xx_lysm_rlp.fasta
+  xx_s_lysm.fasta
+  xx.cnl.fasta
+  xx.cn.fasta
+  xx.tnl.fasta
+  xx.tn.fasta
+  xx.rnl.fasta
+  xx.rn.fasta
+  xx.nl.fasta
+  xx.n.fasta
+~~~
+## R-Predictor usage
 
+## Citations
+Deep learning facilitates precise identification of disease-resistance genes in plants
+Zhenya Liu, Xu Wang, Shuo Cao, Tingyue Lei, Yifu Chenzhu, Mengyan Zhang, Zhongqi Liu, Jianzhong Lu, Wenqi Ma, Bingxiong Su, Yiwen Wang, Yongfeng Zhou
+bioRxiv 2024.09.26.615248; doi: https://doi.org/10.1101/2024.09.26.615248
+## Acknowledgements
+This program would like to thank Professor Zhou and Professor Wang for their guidance, and express gratitude to Xu Wang and Tingyue Lei for their contributions.
