@@ -23,5 +23,9 @@ The Docker version of the R-Predictor will be released shortly!!!
 
 ### Manual installation
 Manually installing R-Predictor can be cumbersome, but fortunately, the tools it depends on are easy to work with.
-- [PfamScan]
-'conda create -n pfam_scan'
+#### PfamScan
+`conda create -n pfam_scan`
+`source activate pfam_scan`
+`conda install -c bioconda pfam_scan hmmer hmmer2 -y`
+#### SignalP
+
