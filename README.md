@@ -22,10 +22,20 @@ There are several ways to install R-Predictor. You just need to find the best th
 The Docker version of the R-Predictor will be released shortly!!!
 
 ### Manual installation
-Manually installing R-Predictor can be cumbersome, but fortunately, the tools it depends on are easy to work with.
-#### PfamScan
-`conda create -n pfam_scan`
-`source activate pfam_scan`
-`conda install -c bioconda pfam_scan hmmer hmmer2 -y`
-#### SignalP
+Manually installing R-Predictor can be cumbersome, but fortunately, these tools it depends on are easy to work with.
+- [PfamScan](https://ftp.ebi.ac.uk/pub/databases/Pfam/releases/Pfam36.0/)
+~~~
+conda create -n pfam_scan
+source activate pfam_scan
+conda install -c bioconda pfam_scan hmmer hmmer2 -y
+~~~
+- [SignalP 6.0](https://github.com/fteufel/signalp-6.0/blob/main/installation_instructions.md)
+~~~
+conda create -n signalp
+source activate signalp
+conda install -c predector signalp6
+signalp6-register ./signalp-6.0h.fast.tar.gz
+~~~
+- [TMHMM-2.0](https://services.healthtech.dtu.dk/cgi-bin/sw_request?software=tmhmm&version=2.0c&packageversion=2.0c&platform=Linux)
+
 
