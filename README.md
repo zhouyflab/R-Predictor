@@ -110,4 +110,4 @@ Deep learning facilitates precise identification of disease-resistance genes in 
 Zhenya Liu, Xu Wang, Shuo Cao, Tingyue Lei, Yifu Chenzhu, Mengyan Zhang, Zhongqi Liu, Jianzhong Lu, Wenqi Ma, Bingxiong Su, Yiwen Wang, Yongfeng Zhou
 bioRxiv 2024.09.26.615248; doi: https://doi.org/10.1101/2024.09.26.615248
 ## Acknowledgements
-This program would like to thank Professor Zhou and Professor Wang for their guidance, and express gratitude to Xu Wang and Tingyue Lei for their contributions.
+This program would like to thank Professor Zhou and Professor Wang for their guidance, and express gratitude to Xu Wang, Tingyue Lei and Zhongqi Liu for their contributions.
