@@ -75,9 +75,9 @@ R-Predictor will return 15 protein sequence files, each corresponding to a plant
 /outcome
   xx_lrr_rlk.fasta
   xx_lysm_rlk.fasta
-  xx_s_tm_rlk.fasta
-  xx_pk_fasta
-  xx_lrr_rlpfasta
+  xx_s_tm_pk.fasta
+  xx_pk.fasta
+  xx_lrr_rlp.fasta
   xx_lysm_rlp.fasta
   xx_s_lysm.fasta
   xx.cnl.fasta
