@@ -96,11 +96,11 @@ R-Predictor will return 15 protein sequence files, each corresponding to a plant
   xx.n.fasta
 ~~~
 ## R-Predictor usage
-Make the following modifications before running R-Predictor
-1.Replace `/root/tool/tmhmm-2.0c/bin/tmhmm` in `Pfam_pk_nb.py` and `signal_rlk_rlp.py`with the correct path.
-2.Unzip the model files of ESM-1v and ESM-LRR, and move them to `models` directory.
-3.Replace `protein_path` and `work_path` in pipeline.py with the correct paths.
-**If you have correctly installed the required dependencies and modified the corresponding paths, R-Predictor will work smoothly.**
+Make the following modifications before running R-Predictor.  
+1.Replace `/root/tool/tmhmm-2.0c/bin/tmhmm` in `Pfam_pk_nb.py` and `signal_rlk_rlp.py`with the correct path.  
+2.Unzip the model files of ESM-1v and ESM-LRR, and move them to `models` directory.  
+3.Replace `protein_path` and `work_path` in pipeline.py with the correct paths.  
+**If you have correctly installed the required dependencies and modified the corresponding paths, R-Predictor will work smoothly.**  
 ~~~
 python pipeline.py
 ~~~
