@@ -100,7 +100,7 @@ Make the following modifications before running R-Predictor.
 1.Replace `/root/tool/tmhmm-2.0c/bin/tmhmm` in `Pfam_pk_nb.py` and `signal_rlk_rlp.py`with the correct path.  
 2.Unzip the model files of ESM-1v and ESM-LRR, and move them to `models` directory.  
 3.Replace `protein_path` and `work_path` in pipeline.py with the correct paths.  
-4.Download the [PfamA]() database and move it to the 'hmm' directory.  
+4.Download the [PfamA]() database and move it to the `hmm` directory.  
 **If you have correctly installed the required dependencies and modified the corresponding paths, R-Predictor will work smoothly.**  
 ~~~
 python pipeline.py
