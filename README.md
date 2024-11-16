@@ -45,12 +45,12 @@ The installation details are as follows:
 ~~~
 - [ESM-1v](https://github.com/facebookresearch/esm/blob/main/README.md) and [model](https://dl.fbaipublicfiles.com/fair-esm/models/esm1v_t33_650M_UR90S_1.pt)
 ~~~
-Download the ESM-1v model and move it to the 'models' directory.
+Download the ESM-1v model and move it to the `models` directory.
 ~~~
 - [ESM-LRR](https://github.com/zhouyflab/R-Predictor/) and [model](https://drive.google.com/file/d/1_Dx_CD6lZLUBcfJIeosVLQwADGk_YNt-/view?usp=drive_link)
 ~~~
 conda create -n ESM-LRR
-Download the ESM-LRR model and move it to the 'models' directory.
+Download the ESM-LRR model and move it to the `models` directory.
 ~~~
 - [ProSite](https://ftp.expasy.org/databases/prosite/ps_scan/README)
 ~~~
@@ -96,6 +96,14 @@ R-Predictor will return 15 protein sequence files, each corresponding to a plant
   xx.n.fasta
 ~~~
 ## R-Predictor usage
+Make the following modifications before running R-Predictor
+1.Replace `/root/tool/tmhmm-2.0c/bin/tmhmm` in `Pfam_pk_nb.py` and `signal_rlk_rlp.py`with the correct path.
+2.Unzip the model files of ESM-1v and ESM-LRR, and move them to `models` directory.
+3.Replace `protein_path` and `work_path` in pipeline.py with the correct paths.
+**If you have correctly installed the required dependencies and modified the corresponding paths, R-Predictor will work smoothly.**
+~~~
+python pipeline.py
+~~~
 
 ## Citations
 Deep learning facilitates precise identification of disease-resistance genes in plants
