@@ -74,6 +74,7 @@ EGSHNAVVGALGNSNAGTSSGDKKHETFGNEQRLKDLEEKLDRDKYKGTRIIGVVGMPGI
 GKTTLLKELYKTWQGKFSRHALIDQIRVKSKHLELDRLPQMLLGELSKLNHPHVDNLKDP
 YSQLHERKVLVVLDDVSKREQIDALREILDWIKEGKEGSRVVIATSDMSLTNGLVDDTYM
 ~~~
+**Ensure that the > lines in the FASTA file consist only of > followed by a unique ID for each protein, such as >Q9XGM3.**
 ## Output
 R-Predictor will return 15 protein sequence files, each corresponding to a plant disease-resistance protein with a different domain topology.
 ~~~
