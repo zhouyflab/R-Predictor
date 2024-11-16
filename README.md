@@ -43,14 +43,15 @@ The installation details are as follows:
 2.Modify the first line of the `tmhmm` in the bin folder to use your own perl path, which can be found by running `which perl`. On line 33, change $opt_basedir="./tmhmm-2.0c".
 3.Modify the first line of the `tmhmmformat.pl` to use your own perl path.
 ~~~
-- [ESM-1v](https://github.com/facebookresearch/esm/blob/main/README.md)
-
-Download the [ESM-1v](https://dl.fbaipublicfiles.com/fair-esm/models/esm1v_t33_650M_UR90S_1.pt) model and move it to the 'models' directory.
-- [ESM-LRR](https://github.com/zhouyflab/R-Predictor/)
+- [ESM-1v](https://github.com/facebookresearch/esm/blob/main/README.md) and [model](https://dl.fbaipublicfiles.com/fair-esm/models/esm1v_t33_650M_UR90S_1.pt)
+~~~
+Download the ESM-1v model and move it to the 'models' directory.
+~~~
+- [ESM-LRR](https://github.com/zhouyflab/R-Predictor/) and [model](https://drive.google.com/file/d/1_Dx_CD6lZLUBcfJIeosVLQwADGk_YNt-/view?usp=drive_link)
 ~~~
 conda create -n ESM-LRR
+Download the ESM-LRR model and move it to the 'models' directory.
 ~~~
-Download the [ESM-LRR](https://drive.google.com/file/d/1_Dx_CD6lZLUBcfJIeosVLQwADGk_YNt-/view?usp=drive_link) model and move it to the 'models' directory.
 - [ProSite](https://ftp.expasy.org/databases/prosite/ps_scan/README)
 ~~~
 source activate pfam_scan
