@@ -34,6 +34,7 @@ conda install -c bioconda pfam_scan hmmer hmmer2 -y
 conda create -n signalp
 source activate signalp
 conda install -c predector signalp6
+signalp6-register signalp-6.0h.fast.tar.gz
 ~~~
 - [TMHMM-2.0](https://services.healthtech.dtu.dk/cgi-bin/sw_request?software=tmhmm&version=2.0c&packageversion=2.0c&platform=Linux)
 ~~~
