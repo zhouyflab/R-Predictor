@@ -81,6 +81,34 @@ def prosite(path):
                     rpw8[i.split("\t")[0]].append(i.split("\t")[1]+"-"+i.split("\t")[2])
     return tir,rpw8
 
+def paircoil2(path):
+    target = {}
+    tmp = []
+    with open(path, "r") as f:
+        for i in f.readlines():
+            i = i.strip()
+            if "Sequence Code" in i:
+                if tmp != []:
+                    target[list(target.keys())[-1]].append(tmp[0] + "-" + tmp[-1])
+                    tmp = []
+                target[">"+i.split(": ")[1]] = []
+
+            else:
+                if "#" not in i:
+                    cc = re.findall("\d+\.?\d*", i)
+                    if float(cc[1]) <= 0.1:
+                        tmp.append(cc[0])
+                    else:
+                        if tmp != [] and float(cc[1]) > 0.1:
+                            target[list(target.keys())[-1]].append(tmp[0]+"-"+tmp[-1])
+                            tmp = []
+                else:
+                    continue
+        if tmp != []:
+            target[list(target.keys())[-1]].append(tmp[0] + "-" + tmp[-1])
+    target = {key: value for key, value in target.items() if target[key] != []}
+    return target
+
 def ProteinToDict(path):
     #Return a dictionary with id as key and sequence as value
     protein_seq = ''
@@ -156,6 +184,15 @@ def main(args):
         generate_protein_nopknb(protein_nb_lrr,tnl_rnl,args.fasta.split(".")[0]+"_nb_lrr_notir_norpw8.fasta")
         protein_nb_lrr_notir_norpw8 = ProteinToDict(args.fasta.split(".")[0]+"_nb_lrr_notir_norpw8.fasta")
         #here to run paircoil2
+        cnl_path = " /root/tool/paircoil2/./paircoil2 -win 21 "+args.fasta.split(".")[0]+"_nb_lrr_notir_norpw8.fasta"+" "+args.fasta.split(".")[0]+"_nb_lrr_notir_norpw8_cc.txt"
+        subprocess.run(cnl_path,shell=True,check=True)
+        nb_lrr_notir_norpw8_cc = paircoil2(args.fasta.split(".")[0]+"_nb_lrr_notir_norpw8_cc.txt")
+        generate_protein(protein_nb_lrr_notir_norpw8,nb_lrr_notir_norpw8_cc,args.fasta.split(".")[0]+"_nb_lrr_notir_norpw8_cc.fasta")
+        protein_nb_lrr_notir_norpw8_cc = ProteinToDict(args.fasta.split(".")[0]+"_nb_lrr_notir_norpw8_cc.fasta")
+        writeprotein(protein_nb_lrr_notir_norpw8_cc,args.dir+"/outcome/"+args.fasta.split(".")[0].split("/")[-1]+"_cnl.fasta")
+        generate_protein_nopknb(protein_nb_lrr_notir_norpw8,nb_lrr_notir_norpw8_cc,args.fasta.split(".")[0]+"_nb_lrr_notir_norpw8_nocc.fasta")
+        protein_nb_lrr_notir_norpw8_nocc = ProteinToDict(args.fasta.split(".")[0]+"_nb_lrr_notir_norpw8_nocc.fasta")
+        writeprotein(protein_nb_lrr_notir_norpw8_nocc,args.dir+"/outcome/"+args.fasta.split(".")[0].split("/")[-1]+"_nl.fasta")
     else:
         create_file_empty(args.fasta.split(".")[0]+"_nb_lrr_tir.fasta")
         create_file_empty(args.dir+"/outcome/"+args.fasta.split(".")[0].split("/")[-1]+"_tnl.fasta")
@@ -187,6 +224,15 @@ def main(args):
         generate_protein_nopknb(protein_nb_nolrr, tn_rn, args.fasta.split(".")[0] + "_nb_nolrr_notir_norpw8.fasta")
         protein_nb_nolrr_notir_norpw8 = ProteinToDict(args.fasta.split(".")[0] + "_nb_nolrr_notir_norpw8.fasta")
         #here to run paircoil2
+        cn_path = " /root/tool/paircoil2/./paircoil2 -win 21 "+args.fasta.split(".")[0]+"_nb_nolrr_notir_norpw8.fasta"+" "+args.fasta.split(".")[0]+"_nb_nolrr_notir_norpw8_cc.txt"
+        subprocess.run(cn_path,shell=True,check=True)
+        nb_nolrr_notir_norpw8_cc = paircoil2(args.fasta.split(".")[0]+"_nb_nolrr_notir_norpw8_cc.txt")
+        generate_protein(protein_nb_nolrr_notir_norpw8,nb_nolrr_notir_norpw8_cc,args.fasta.split(".")[0]+"_nb_nolrr_notir_norpw8_cc.fasta")
+        protein_nb_nolrr_notir_norpw8_cc = ProteinToDict(args.fasta.split(".")[0]+"_nb_nolrr_notir_norpw8_cc.fasta")
+        writeprotein(protein_nb_nolrr_notir_norpw8_cc,args.dir+"/outcome/"+args.fasta.split(".")[0].split("/")[-1]+"_cn.fasta")
+        generate_protein_nopknb(protein_nb_nolrr_notir_norpw8,nb_nolrr_notir_norpw8_nocc,args.fasta.split(".")[0]+"_nb_nolrr_notir_norpw8_nocc.fasta")
+        protein_nb_nolrr_notir_norpw8_nocc = ProteinToDict(args.fasta.split(".")[0]+"_nb_nolrr_notir_norpw8_nocc.fasta")
+        writeprotein(protein_nb_nolrr_notir_norpw8_nocc,args.dir+"/outcome/"+args.fasta.split(".")[0].split("/")[-1]+"_n.fasta")
     else:
         create_file_empty(args.fasta.split(".")[0]+"_nb_nolrr_tir.fasta")
         create_file_empty(args.dir+"/outcome/"+args.fasta.split(".")[0].split("/")[-1]+"_tn.fasta")
