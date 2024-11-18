@@ -312,6 +312,12 @@ def esmlrr(path):
                 target[list(target.keys())[-1]].append(i.split("\t")[1])
     return target
 
+def writeprotein(protein,path):
+    with open(path,"w") as f:
+        for k in protein.keys():
+            f.write(k+"\n")
+            f.write(protein[k]+"\n")
+
 def main(args):
     plm_path = args.dir+"/models/esm1v_t33_650M_UR90S_1.pt"
     esm_lrr_path = args.dir+"/models/esm_lrr.pickle"
@@ -348,9 +354,11 @@ def main(args):
         rlk_s_lrr = esmlrr(args.fasta.split(".")[0]+"_pk_tm_s_lrr.txt")
         generate_protein(protein_rlk_s,rlk_s_lrr,args.fasta.split(".")[0]+"_pk_tm_s_lrr.fasta")
         protein_rlk_s_lrr = ProteinToDict(args.fasta.split(".")[0]+"_pk_tm_s_lrr.fasta")
+        writeprotein(protein_rlk_s_lrr,args.dir+"/outcome/"+args.fasta.split(".")[0].split("/")[-1]+"_lrr_rlk.fasta")
         generate_protein_nopknb(protein_rlk_s,protein_rlk_s_lrr,args.fasta.split(".")[0]+"_pk_tm_s_nolrr.fasta")
     else:
         create_file_empty(args.fasta.split(".")[0]+"_pk_tm_s_lrr.fasta")
+        create_file_empty(args.dir+"/outcome/"+args.fasta.split(".")[0].split("/")[-1]+"_lrr_rlk.fasta")
         create_file_empty(args.fasta.split(".")[0]+"_pk_tm_s_nolrr.fasta")
 
     #pk_notm_nos
@@ -381,9 +389,11 @@ def main(args):
         rlp_s_tm_lrr = esmlrr(args.fasta.split(".")[0]+"_nopknb_s_tm_lrr.txt")
         generate_protein(protein_rlp_s_tm,rlp_s_tm_lrr,args.fasta.split(".")[0]+"_nopknb_s_tm_lrr.fasta")
         protein_rlp_s_tm_lrr = ProteinToDict(args.fasta.split(".")[0]+"_nopknb_s_tm_lrr.fasta")
+        writeprotein(protein_rlp_s_tm_lrr,args.dir+"/outcome/"+args.fasta.split(".")[0].split("/")[-1]+"_lrr_rlp.fasta")
         generate_protein_nopknb(protein_rlp_s_tm,protein_rlp_s_tm_lrr,args.fasta.split(".")[0]+"_nopknb_s_tm_nolrr.fasta")
     else:
         create_file_empty(args.fasta.split(".")[0]+"_nopknb_s_tm_lrr.fasta")
+        create_file_empty(args.dir+"/outcome/"+args.fasta.split(".")[0].split("/")[-1]+"_lrr_rlp.fasta")
         create_file_empty(args.fasta.split(".")[0]+"_nopknb_s_tm_nolrr.fasta")
 
 if __name__ == '__main__':

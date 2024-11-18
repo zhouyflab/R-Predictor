@@ -142,19 +142,6 @@ def main(args):
     else:
         create_file_empty(args.fasta.split(".")[0]+"_nopknb_s.fasta")
 
-
-    #rlk_s = signalp(args.fasta.split(".")[0]+"_pk_tm_signal/output.gff3")
-    #pk_notm_s = signalp(args.fasta.split(".")[0]+"_pk_notm_signal/output.gff3")
-    #rlp_s = signalp(args.fasta.split(".")[0]+"_nopknb_signal/output.gff3")
-    #protein_pk_tm = ProteinToDict(args.fasta.split(".")[0]+"_pk_tm.fasta")
-    #protein_pk_notm = ProteinToDict(args.fasta.split(".")[0]+"_pk_notm.fasta")
-    #protein_no_pknb = ProteinToDict(args.fasta.split(".")[0]+"_nopknb.fasta")
-    #generate_protein(protein_pk_tm,rlk_s,args.fasta.split(".")[0]+"_pk_tm_s.fasta")
-    #generate_protein(protein_pk_notm,pk_notm_s,args.fasta.split(".")[0]+"_pk_notm_s.fasta")
-    #protein_pk_notm_s = ProteinToDict(args.fasta.split(".")[0]+"_pk_notm_s.fasta")
-    #generate_protein_nopknb(protein_pk_notm,protein_pk_notm_s,args.fasta.split(".")[0]+"_pk_notm_nos.fasta")
-    #generate_protein(protein_no_pknb,rlp_s,args.fasta.split(".")[0]+"_nopknb_s.fasta")
-
     rlp_s_tm_env = "perl /root/tool/tmhmm-2.0c/bin/tmhmm "+args.fasta.split(".")[0]+"_nopknb_s.fasta"+" > "+args.fasta.split(".")[0]+"_nopknb_s_tm.txt"
     subprocess.run(rlp_s_tm_env,shell=True,check=True)
     rlp_s_tm = tmhmm(args.fasta.split(".")[0]+"_nopknb_s_tm.txt")

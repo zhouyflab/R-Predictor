@@ -24,6 +24,7 @@ def parse_args():
     parser.add_argument('--tm_envir', type=str, default='TM', help='virtual environment name of TMHMM-2.0')
     parser.add_argument('--signal_envir', type=str, default='Signal', help='virtual environment name of SignalP6.0')
     parser.add_argument('--cc_envir', type=str, default='CC', help='virtual environment name of CoCoPRED')
+    parser.add_argument('--dir', type=str, default='./hmm', help='path to the hmm')
     return parser.parse_args()
 
 def process_pfam(path,first):
@@ -138,7 +139,8 @@ def difference(dic1,dic2):
     return dic
 
 def main(args):
-    pkinase = "pfam_scan.pl -fasta "+args.fasta+" -dir /root/autodl-tmp/pfam/PK_NB_HMM -outfile "+args.fasta.split(".")[0]+"_pk_nb.txt"
+    os.makedirs(args.dir+"/outcome",exist_ok=True)
+    pkinase = "pfam_scan.pl -fasta "+args.fasta+" -dir "+args.dir+"/hmm/PK_NB_HMM -outfile "+args.fasta.split(".")[0]+"_pk_nb.txt"
     subprocess.run(pkinase,shell=True,check=True)
     protein = ProteinToDict(args.fasta)
     pk,nb = process_pfam(args.fasta.split(".")[0]+"_pk_nb.txt",True)
