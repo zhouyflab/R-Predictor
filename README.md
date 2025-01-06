@@ -56,11 +56,12 @@ Download the ESM-LRR model and move it to the `models` directory.
 ~~~
 source activate pfam_scan
 conda install -c bioconda pftools
+The version should be greater than 3.2.11
 ~~~
 - [Paircoil2](https://cb.csail.mit.edu/paircoil2/)
 ~~~
-Place the configuration file .paircoil2 in your home directory and the
-executable and data files (*.tb) in the directory you will run Paircoil2 in.
+Place the configuration file .paircoil2 in your home directory and the executable and data files (*.tb) in the directory you will run Paircoil2 in.
+It is recommended to use the installation package with the i686 suffix in the tools folder.
 ~~~
 **If the above tools cannot be installed via conda or downloaded from the official website, please go to the [tools](tools/) folder.**
 ## Input
