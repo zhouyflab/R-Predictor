@@ -50,6 +50,10 @@ Download the ESM-1v model and move it to the `models` directory.
 - [ESM-LRR](https://github.com/zhouyflab/R-Predictor/) and [model](https://drive.google.com/file/d/1_Dx_CD6lZLUBcfJIeosVLQwADGk_YNt-/view?usp=drive_link)
 ~~~
 conda create -n ESM-LRR
+conda install torch
+conda install fair-esm
+conda install scikit-learn
+conda install seaborn
 Download the ESM-LRR model and move it to the `models` directory.
 ~~~
 - [ProSite](https://ftp.expasy.org/databases/prosite/ps_scan/README)
