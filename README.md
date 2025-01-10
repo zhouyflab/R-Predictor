@@ -19,7 +19,14 @@ R-Predictor, designed for the de novo annotation of various R genes integrate fo
 There are several ways to install R-Predictor. You just need to find the best that works for your system.
 
 ### Quick installation using Docker
-The Docker version of the R-Predictor will be released shortly!!!
+- [Image of R-Predictor](10.5281/zenodo.14625967)
+~~~
+docker import ./r-predictor-v1.tar r-predictor:v1
+docker run -it r-predictor:v1 /bin/bash
+cd /usr/tools/R-Predictor-main/scripts
+python pipeline
+cd /usr/tools/test_data
+~~~
 
 ### Manual installation
 Manually installing R-Predictor can be cumbersome, but fortunately, these tools it depends on are easy to work with.
@@ -49,7 +56,7 @@ Download the ESM-1v model and move it to the `models` directory.
 ~~~
 - [ESM-LRR](https://github.com/zhouyflab/R-Predictor/) and [model](https://drive.google.com/file/d/1_Dx_CD6lZLUBcfJIeosVLQwADGk_YNt-/view?usp=drive_link)
 ~~~
-conda create -n ESM-LRR
+conda create -n esm-lrr
 conda install torch
 conda install fair-esm
 conda install scikit-learn
