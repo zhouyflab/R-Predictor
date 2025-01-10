@@ -27,12 +27,12 @@ cd /usr/tools/R-Predictor-main/scripts
 python pipeline
 cd /usr/tools/test_data
 ~~~
-It seems to be a problem with Paircoil2, which cannot be installed correctly into the docker image.
-The home directory is not /root but /home/username, Paircoil2 can be successfully installed and run.
-So, the docker image can run R-Predictor, except for Paircoil2.
-We recommend that you run Paircoil2 manually after installing the image.
-Paircoil2's input files xx_nb_lrr_nbotir_norpw8.fasta and xx_nb_nolrr_notir_norpw8.fasta are stored in the image /usr/tools/test_data
-Replace `cnl_path` and `cn_path` in Topaircoil2.py with the correct paths.
+It seems to be a problem with Paircoil2, which cannot be installed correctly into the docker image.  
+The home directory is not /root but /home/username, Paircoil2 can be successfully installed and run.  
+So, the docker image can run R-Predictor, except for Paircoil2.  
+We recommend that you run Paircoil2 manually after installing the image.  
+Paircoil2's input files xx_nb_lrr_nbotir_norpw8.fasta and xx_nb_nolrr_notir_norpw8.fasta are stored in the image /usr/tools/test_data.  
+Replace `cnl_path` and `cn_path` in Topaircoil2.py with the correct paths.  
 ~~~
 python Topaircoil2.py --fasta1 xx_nb_lrr_notir_norpw8.fasta --fasta2 xx_nb_nolrr_notir_norpw8.fasta --dir the storage path of result files
 ~~~
