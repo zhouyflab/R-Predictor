@@ -14,6 +14,6 @@ protein_path = "/root/autodl-tmp/Rpredictor/test/test.fasta"
 work_path = "/root/autodl-tmp/Rpredictor"
 subprocess.run(f"conda run -n pfam_scan python pfam_pk_nb.py --fasta {protein_path} --dir {work_path}",shell=True)
 subprocess.run(f"conda run -n signalp python signal_rlk_rlp.py --fasta {protein_path}",shell=True)
-subprocess.run(f"conda run -n ESM-LRR python esm-lrr.py --fasta {protein_path} --dir {work_path}",shell=True)
+subprocess.run(f"conda run -n esm-lrr python esm-lrr.py --fasta {protein_path} --dir {work_path}",shell=True)
 subprocess.run(f"conda run -n pfam_scan python pfam_lysm.py --fasta {protein_path} --dir {work_path}",shell=True)
 subprocess.run(f"conda run -n pfam_scan python pfam_tir_rpw8.py --fasta {protein_path} --dir {work_path}",shell=True)
