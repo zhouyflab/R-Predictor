@@ -19,7 +19,7 @@ R-Predictor, designed for the de novo annotation of various R genes integrate fo
 There are several ways to install R-Predictor. You just need to find the best that works for your system.
 
 ### Quick installation using Docker
-- [Docker image of R-Predictor](10.5281/zenodo.14625967)
+- [Docker image of R-Predictor](https://drive.google.com/file/d/1ZwSK5qalMU3-LhPAETgL0Q890l1oLniH/view?usp=sharing)
 ~~~
 docker import ./r-predictor-v1.tar r-predictor:v1
 docker run -it r-predictor:v1 /bin/bash
