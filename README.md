@@ -64,7 +64,7 @@ The installation details are as follows:
 ~~~
 Download the ESM-1v model and move it to the `models` directory.
 ~~~
-- [ESM-LRR](https://github.com/zhouyflab/R-Predictor/) and [model](https://drive.google.com/file/d/1_Dx_CD6lZLUBcfJIeosVLQwADGk_YNt-/view?usp=drive_link)
+- [ESM-LRR](https://github.com/zhouyflab/R-Predictor/) and [model](https://drive.google.com/file/d/1k8Kl9me4ZQpuX9maEGWq4ALbxO3yhkEG/view?usp=sharing)
 ~~~
 conda create -n esm-lrr
 conda install torch
