@@ -20,14 +20,14 @@ Manually installing R-Predictor can be cumbersome, but fortunately, these tools 
 - [Pfam36.0](https://ftp.ebi.ac.uk/pub/databases/Pfam/releases/Pfam36.0/)
 ~~~
 conda create -n pfam_scan
-source activate pfam_scan
+conda activate pfam_scan
 conda install -c bioconda pfam_scan hmmer hmmer2 -y
 pip3 install Bio
 ~~~
 - [SignalP 6.0](https://github.com/fteufel/signalp-6.0/blob/main/installation_instructions.md)
 ~~~
 conda create -n signalp
-source activate signalp
+conda activate signalp
 conda install -c predector signalp6
 signalp6-register signalp-6.0h.fast.tar.gz
 ~~~
