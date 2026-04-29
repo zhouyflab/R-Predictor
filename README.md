@@ -2,7 +2,6 @@
 ## Table of Contents
 - [Introduction](#Introduction)
 - [Installation](#Installation)
-  - [Quick installation using Docker](#QuickinstallationusingDocker)
   - [Manual installation](#Manualintallation)
 - [Inputs](#Inputs)
 - [Outputs](#Outputs)
@@ -16,28 +15,6 @@ R-Predictor, designed for the de novo annotation of various R genes integrate fo
 
 ![示例图片](images/pipeline.png)
 ## Installation
-There are several ways to install R-Predictor. You just need to find the best that works for your system.
-
-### Quick installation using Docker
-- [Docker image of R-Predictor](https://drive.google.com/file/d/1ZwSK5qalMU3-LhPAETgL0Q890l1oLniH/view?usp=sharing)
-~~~
-docker import ./r-predictor-v1.tar r-predictor:v1
-docker run -it r-predictor:v1 /bin/bash
-cd /usr/tools/R-Predictor-main/scripts
-python pipeline
-cd /usr/tools/test_data
-~~~
-It seems to be a problem with Paircoil2, which cannot be installed correctly into the docker image.  
-The home directory is not /root but /home/username, Paircoil2 can be successfully installed and run.  
-So, the docker image can run R-Predictor, except for Paircoil2.  
-We recommend that you run Paircoil2 manually after installing the image.  
-Paircoil2's input files xx_nb_lrr_nbotir_norpw8.fasta and xx_nb_nolrr_notir_norpw8.fasta are stored in the image /usr/tools/test_data.  
-Replace `cnl_path` and `cn_path` in Topaircoil2.py with the correct paths.  
-~~~
-python Topaircoil2.py --fasta1 xx_nb_lrr_notir_norpw8.fasta --fasta2 xx_nb_nolrr_notir_norpw8.fasta --dir the storage path of result files
-~~~
-
-
 ### Manual installation
 Manually installing R-Predictor can be cumbersome, but fortunately, these tools it depends on are easy to work with.
 - [Pfam36.0](https://ftp.ebi.ac.uk/pub/databases/Pfam/releases/Pfam36.0/)
@@ -45,6 +22,7 @@ Manually installing R-Predictor can be cumbersome, but fortunately, these tools 
 conda create -n pfam_scan
 source activate pfam_scan
 conda install -c bioconda pfam_scan hmmer hmmer2 -y
+pip3 install Bio
 ~~~
 - [SignalP 6.0](https://github.com/fteufel/signalp-6.0/blob/main/installation_instructions.md)
 ~~~
@@ -57,27 +35,30 @@ signalp6-register signalp-6.0h.fast.tar.gz
 ~~~
 The installation details are as follows:
 1.Click the hyperlink to download the installation package.
-2.Modify the first line of the `tmhmm` in the bin folder to use your own perl path, which can be found by running `which perl`. On line 33, change $opt_basedir="./tmhmm-2.0c".
+2.Modify the first line of the `tmhmm` in the bin folder to use your own perl path, which can be found by running `which perl`. On line 33, change $opt_basedir=the absolute path of tmhmm-2.0c.
 3.Modify the first line of the `tmhmmformat.pl` to use your own perl path.
 ~~~
 - [ESM-1v](https://github.com/facebookresearch/esm/blob/main/README.md) and [model](https://dl.fbaipublicfiles.com/fair-esm/models/esm1v_t33_650M_UR90S_1.pt)
 ~~~
 Download the ESM-1v model and move it to the `models` directory.
+ESM-1v for README.md and model for esm1v_t33_650M_UR90S_1.pt.
 ~~~
 - [ESM-LRR](https://github.com/zhouyflab/R-Predictor/) and [model](https://drive.google.com/file/d/1k8Kl9me4ZQpuX9maEGWq4ALbxO3yhkEG/view?usp=sharing)
 ~~~
 conda create -n esm-lrr
+conda activate esm-lrr
 conda install torch
 conda install fair-esm
 conda install scikit-learn
 conda install seaborn
+pip3 install tqdm
 Download the ESM-LRR model and move it to the `models` directory.
+ESM-LRR for README.md and model for esm_lrr.pickle.
 ~~~
 - [ProSite](https://ftp.expasy.org/databases/prosite/ps_scan/README)
 ~~~
-source activate pfam_scan
+conda activate pfam_scan
 conda install -c bioconda pftools
-The version should be greater than 3.2.11
 ~~~
 - [Paircoil2](https://cb.csail.mit.edu/paircoil2/)
 ~~~
