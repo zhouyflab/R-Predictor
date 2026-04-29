@@ -24,8 +24,8 @@ conda create -n pfam_scan
 conda activate pfam_scan
 conda install -c bioconda pfam_scan hmmer hmmer2 -y
 pip3 install Bio
-Download the [PfamA](https://drive.google.com/file/d/1BkmNB-4ujw8cIeTDWc-_GkXaUnU4Y3_j/view?usp=drive_link) database and move it to the `hmm` directory.
 ~~~
+Download the [PfamA](https://drive.google.com/file/d/1BkmNB-4ujw8cIeTDWc-_GkXaUnU4Y3_j/view?usp=drive_link) database and move it to the `hmm` directory.
 - [SignalP 6.0](https://github.com/fteufel/signalp-6.0/blob/main/installation_instructions.md)
 ~~~
 conda create -n signalp
@@ -91,8 +91,8 @@ Note on Compatibility: Although the installation procedures above have been thor
 note that the 64-bit package of Paircoil2 appears to be missing the required .paircoil2 file, which
 may prevent it from running successfully on 64-bit operating systems. If you encounter any difficulties
 during the installation of R-Predictor, please feel free to open a GitHub issue or contact us via email
-at zhenyaliu77@gmail.com. We are happy to provide technical support or, if necessary, grant accessto use
-R-Predictor directly on our HPC environment.
+at zhenyaliu77@gmail.com. We are happy to provide technical support or, if necessary, grant access to
+use R-Predictor directly on our HPC environment.
 ~~~
 **If the above tools cannot be installed via conda or downloaded from the official website, please go to the [tools](tools/) folder.**
 
