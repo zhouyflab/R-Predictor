@@ -1,0 +1,35 @@
+# STOCKHOLM 1.0
+#=GF ID   TIR
+#=GF AC   PF01582.24
+#=GF DE   TIR domain
+#=GF GA   21.3; 21.3;
+#=GF TP   Family
+#=GF ML   179
+#=GF CL   CL0173
+//
+# STOCKHOLM 1.0
+#=GF ID   TIR_2
+#=GF AC   PF13676.10
+#=GF DE   TIR domain
+#=GF GA   28; 28;
+#=GF TP   Domain
+#=GF ML   122
+#=GF CL   CL0173
+//
+# STOCKHOLM 1.0
+#=GF ID   TIR_3
+#=GF AC   PF18567.5
+#=GF DE   Toll/interleukin-1 receptor domain
+#=GF GA   26.1; 26.1;
+#=GF TP   Domain
+#=GF ML   129
+#=GF CL   CL0173
+//
+# STOCKHOLM 1.0
+#=GF ID   RPW8
+#=GF AC   PF05659.15
+#=GF DE   Arabidopsis broad-spectrum mildew resistance protein RPW8
+#=GF GA   30.4; 30.4;
+#=GF TP   Family
+#=GF ML   139
+//

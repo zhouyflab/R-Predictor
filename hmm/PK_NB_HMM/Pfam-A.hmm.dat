@@ -1,0 +1,27 @@
+# STOCKHOLM 1.0
+#=GF ID   Pkinase
+#=GF AC   PF00069.29
+#=GF DE   Protein kinase domain
+#=GF GA   31.7; 31.7;
+#=GF TP   Domain
+#=GF ML   263
+#=GF CL   CL0016
+//
+# STOCKHOLM 1.0
+#=GF ID   PK_Tyr_Ser-Thr
+#=GF AC   PF07714.21
+#=GF DE   Protein tyrosine and serine/threonine kinase
+#=GF GA   23.1; 23.1;
+#=GF TP   Domain
+#=GF ML   258
+#=GF CL   CL0016
+//
+# STOCKHOLM 1.0
+#=GF ID   NB-ARC
+#=GF AC   PF00931.26
+#=GF DE   NB-ARC domain
+#=GF GA   23.5; 23.5;
+#=GF TP   Domain
+#=GF ML   248
+#=GF CL   CL0023
+//
