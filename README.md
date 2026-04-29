@@ -66,6 +66,22 @@ Place the configuration file .paircoil2 in your home directory and the executabl
 It is recommended to use the installation package with the i686 suffix in the tools folder.
 ~~~
 **If the above tools cannot be installed via conda or downloaded from the official website, please go to the [tools](tools/) folder.**
+### Installation details
+**Dependency version**
+~~~
+pfam_scan==1.6
+hmmer==3.4
+hmmer2==2.3.2
+Bio==1.8.1
+signalp6==6.0+h
+tmhmm==2.0c
+pytorch==2.7.1
+fair-esm==1.0.2
+scikit-learn==1.2.2
+seaborn==0.13.2
+tqdm==4.67.3
+pftools==3.2.12
+~~~
 ## Input
 R-Predictor supports single or multiple protein sequences, which should be in FASTA format.
 ~~~
