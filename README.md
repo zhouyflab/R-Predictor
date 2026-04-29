@@ -3,6 +3,7 @@
 - [Introduction](#Introduction)
 - [Installation](#Installation)
   - [Manual installation](#Manualintallation)
+  - [Installation details](#Installationdetails)
 - [Inputs](#Inputs)
 - [Outputs](#Outputs)
 - [R-Predictor usage](#R-Predictorusage)
@@ -65,7 +66,6 @@ conda install -c bioconda pftools
 Place the configuration file .paircoil2 in your home directory and the executable and data files (*.tb) in the directory you will run Paircoil2 in.
 It is recommended to use the installation package with the i686 suffix in the tools folder.
 ~~~
-**If the above tools cannot be installed via conda or downloaded from the official website, please go to the [tools](tools/) folder.**
 ### Installation details
 **Dependency version**
 ~~~
@@ -81,6 +81,11 @@ scikit-learn==1.2.2
 seaborn==0.13.2
 tqdm==4.67.3
 pftools==3.2.12
+
+if pythorch >= 2.6, please change:
+model_data = torch.load(str(model_location), map_location="cpu") to  model_data = torch.load(str(model_location), map_location="cpu", weights_only=False)
+regression_data = torch.load(regression_location, map_location="cpu") to regression_data = torch.load(regression_location, map_location="cpu", weights_only=False)
+in ./anaconda3/envs/esm-lrr/lib/python3.11/site-packages/esm/pretrained.py
 ~~~
 ## Input
 R-Predictor supports single or multiple protein sequences, which should be in FASTA format.
