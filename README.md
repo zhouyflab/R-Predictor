@@ -24,6 +24,7 @@ conda create -n pfam_scan
 conda activate pfam_scan
 conda install -c bioconda pfam_scan hmmer hmmer2 -y
 pip3 install Bio
+
 Download the PfamA database and move it to the `hmm` directory.
 Pfam36.0 for all databases and PfamA for PfamA database.
 ~~~
@@ -50,11 +51,15 @@ ESM-1v for README.md and model for esm1v_t33_650M_UR90S_1.pt.
 ~~~
 conda create -n esm-lrr
 conda activate esm-lrr
-conda install torch
-conda install fair-esm
-conda install scikit-learn
-conda install seaborn
+conda install -y \
+    pytorch=2.7.1 \
+    scikit-learn=1.2.2 \
+    seaborn=0.13.2 \
+    -c pytorch \
+    -c conda-forge
+conda install -y fair-esm--1.0.2
 pip3 install tqdm
+
 Download the ESM-LRR model and move it to the `models` directory.
 ESM-LRR for README.md and model for esm_lrr.pickle.
 ~~~
@@ -98,12 +103,14 @@ use R-Predictor directly on our HPC environment.
 **If the above tools cannot be installed via conda or downloaded from the official website, please go to the [tools](tools/) folder.**
 
 ## R-Predictor usage
+**If you have correctly installed the required dependencies and modified the corresponding paths, R-Predictor will work smoothly.**  
+~~~
 Make the following modifications before running R-Predictor.    
 1.Unzip the model files of ESM-1v and ESM-LRR, and move them to `models` directory. 
 2.Unzip the PfamA database and move it to `hmm` directory. 
 3.Replace `/root/tool/tmhmm-2.0c/bin/tmhmm` in `Pfam_pk_nb.py` and `signal_rlk_rlp.py`with the correct path. 
-4.Replace `cnl_path` and `cn_path` in pfam_tir_rpw8.py with the correct paths. 
-**If you have correctly installed the required dependencies and modified the corresponding paths, R-Predictor will work smoothly.**  
+4.Replace `cnl_path` and `cn_path` in pfam_tir_rpw8.py with the correct paths.
+~~~
 ~~~
 #Run R-Predictor for a single protein file.
 python pipeline.py --fasta <file>
