@@ -99,10 +99,10 @@ use R-Predictor directly on our HPC environment.
 
 ## R-Predictor usage
 Make the following modifications before running R-Predictor.    
-1.Unzip the model files of ESM-1v and ESM-LRR, and move them to `models` directory.
-2.Unzip the PfamA database and move it to `hmm` directory.
-3.Replace `/root/tool/tmhmm-2.0c/bin/tmhmm` in `Pfam_pk_nb.py` and `signal_rlk_rlp.py`with the correct path.
-4.Replace `cnl_path` and `cn_path` in pfam_tir_rpw8.py with the correct paths.  
+1.Unzip the model files of ESM-1v and ESM-LRR, and move them to `models` directory. 
+2.Unzip the PfamA database and move it to `hmm` directory. 
+3.Replace `/root/tool/tmhmm-2.0c/bin/tmhmm` in `Pfam_pk_nb.py` and `signal_rlk_rlp.py`with the correct path. 
+4.Replace `cnl_path` and `cn_path` in pfam_tir_rpw8.py with the correct paths. 
 **If you have correctly installed the required dependencies and modified the corresponding paths, R-Predictor will work smoothly.**  
 ~~~
 #Run R-Predictor for a single protein file.
