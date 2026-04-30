@@ -4,9 +4,9 @@
 - [Installation](#Installation)
   - [Manual installation](#Manualintallation)
   - [Installation details](#Installationdetails)
+- [R-Predictor usage](#R-Predictorusage)
 - [Inputs](#Inputs)
 - [Outputs](#Outputs)
-- [R-Predictor usage](#R-Predictorusage)
 - [Citations](#Citations)
 - [Acknowledgements](#Acknowledgements)
 ## Introduction
@@ -97,6 +97,21 @@ use R-Predictor directly on our HPC environment.
 ~~~
 **If the above tools cannot be installed via conda or downloaded from the official website, please go to the [tools](tools/) folder.**
 
+## R-Predictor usage
+Make the following modifications before running R-Predictor.    
+1.Unzip the model files of ESM-1v and ESM-LRR, and move them to `models` directory.
+2.Unzip the PfamA database and move it to `hmm` directory.
+3.Replace `/root/tool/tmhmm-2.0c/bin/tmhmm` in `Pfam_pk_nb.py` and `signal_rlk_rlp.py`with the correct path.
+4.Replace `cnl_path` and `cn_path` in pfam_tir_rpw8.py with the correct paths.  
+**If you have correctly installed the required dependencies and modified the corresponding paths, R-Predictor will work smoothly.**  
+~~~
+#Run R-Predictor for a single protein file.
+python pipeline.py --fasta <file>
+
+#Run R-Predictor for all proteins files in a folder.
+python pipeline.py --fasta <dir>
+~~~
+
 ## Input
 R-Predictor supports single or multiple protein sequences, which should be in FASTA format.
 ~~~
@@ -129,18 +144,6 @@ R-Predictor will return 15 protein sequence files, each corresponding to a plant
   xx.nl.fasta
   xx.n.fasta
 ~~~
-## R-Predictor usage
-Make the following modifications before running R-Predictor.  
-1.Replace `/root/tool/tmhmm-2.0c/bin/tmhmm` in `Pfam_pk_nb.py` and `signal_rlk_rlp.py`with the correct path.  
-2.Unzip the model files of ESM-1v and ESM-LRR, and move them to `models` directory.  
-3.Replace `protein_path` and `work_path` in pipeline.py with the correct paths.  
-4.Replace `cnl_path` and `cn_path` in pfam_tir_rpw8.py with the correct paths.  
-5.Download the [PfamA](https://drive.google.com/file/d/1BkmNB-4ujw8cIeTDWc-_GkXaUnU4Y3_j/view?usp=drive_link) database and move it to the `hmm` directory.  
-**If you have correctly installed the required dependencies and modified the corresponding paths, R-Predictor will work smoothly.**  
-~~~
-python pipeline.py
-~~~
-
 ## Citations
 Deep learning facilitates precise identification of disease-resistance genes in plants
 Zhenya Liu, Xu Wang, Shuo Cao, Tingyue Lei, Yifu Chenzhu, Mengyan Zhang, Zhongqi Liu, Jianzhong Lu, Wenqi Ma, Bingxiong Su, Yiwen Wang, Yongfeng Zhou
